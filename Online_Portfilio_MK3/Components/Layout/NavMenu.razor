@@ -1,54 +1,14 @@
 ﻿@using MudBlazor
-@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Routing
 
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
-
-<MudLayout>
-
-    <!-- Top App Bar -->
-    <MudAppBar Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu"
-                       Color="Color.Inherit"
-                       Edge="Edge.Start"
-                       OnClick="@ToggleDrawer" />
-        <MudText Typo="Typo.h6">Online_Portfolio_MK3</MudText>
-    </MudAppBar>
-
-    <!-- Left Sidebar -->
-    <MudDrawer @bind-Open="_drawerOpen"
-               Variant="DrawerVariant.Responsive"
-               Elevation="1"
-               ClipMode="DrawerClipMode.Always"
-               Class="mud-width-240">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.subtitle2" Class="px-2">Navigation</MudText>
-        </MudDrawerHeader>
-
-        <MudNavMenu Dense="true">
-            <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">
-                Home
-            </MudNavLink>
-
-            <MudNavLink Href="counter" Icon="@Icons.Material.Filled.AddBox">
-                Counter
-            </MudNavLink>
-
-            <MudNavLink Href="weather" Icon="@Icons.Material.Filled.CloudQueue">
-                Weather
-            </MudNavLink>
-        </MudNavMenu>
-    </MudDrawer>
-
-    <!-- Main Page Content -->
-    <MudMainContent>
-        @Body
-    </MudMainContent>
-
-</MudLayout>
-
-@code {
-    private bool _drawerOpen = true;
-    private void ToggleDrawer() => _drawerOpen = !_drawerOpen;
-}
+<MudNavMenu Dense="true" Class="navmenu-debug">
+    <MudButton>
+    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+    </MudButton>
+    <MudButton>
+    <MudNavLink Href="counter" Icon="@Icons.Material.Filled.AddBox">Counter</MudNavLink>
+    </MudButton>
+    <MudButton>
+    <MudNavLink Href="weather" Icon="@Icons.Material.Filled.CloudQueue">Weather</MudNavLink>
+    </MudButton>
+</MudNavMenu>

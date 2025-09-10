@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddMudServices();
-
+builder.Services.AddScoped<Online_Portfilio_MK3.Components.Layout.PageLinks>();
 
 var app = builder.Build();
 
