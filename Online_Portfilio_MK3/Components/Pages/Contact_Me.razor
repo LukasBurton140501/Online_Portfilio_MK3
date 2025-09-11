@@ -1,6 +1,7 @@
 ﻿@page "/contact"
 @using MudBlazor
 @using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Components.Forms
 @inject ISnackbar Snackbar
 
 <PageTitle>Contact</PageTitle>
@@ -42,14 +43,15 @@
                                       Placeholder="Your message"
                                       Lines="6"
                                       HelperText="Be as detailed as you like."
-                                      Required="true"
-                                      Text="@_model.Message" />
+                                      Required="true" />
 
-                        <MudStack Direction="Row" Justify="FlexStart" Spacing="2">
+                        <MudStack Direction="Row" Justify="Justify.FlexStart" Spacing="2">
                             <MudButton Type="Submit" Color="Color.Primary" Variant="Variant.Filled" Disabled="@_submitting">
                                 @if (_submitting)
                                 {
-                                    <MudProgressCircular Size="16" Indeterminate="true" Class="mr-2" />
+                                    <!-- Use enum size or set Diameter for exact px -->
+                                    <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+                                    <!-- Or: <MudProgressCircular Diameter="16" Indeterminate="true" Class="mr-2" /> -->
                                 }
                                 Send
                             </MudButton>
@@ -67,11 +69,11 @@
                     <MudCardContent>
                         <MudText Typo="Typo.h6">Contact Details</MudText>
                         <MudStack Spacing="1">
-                            <MudStack Direction="Row" AlignItems="Center" Spacing="1">
+                            <MudStack Direction="Row" AlignItems="AlignItems.Center" Spacing="1">
                                 <MudIcon Icon="@Icons.Material.Filled.Email" />
                                 <MudLink Href="mailto:lukasburton.1401@gmail.com">lukasburton.1401@gmail.com</MudLink>
                             </MudStack>
-                            <MudStack Direction="Row" AlignItems="Center" Spacing="1">
+                            <MudStack Direction="Row" AlignItems="AlignItems.Center" Spacing="1">
                                 <MudIcon Icon="@Icons.Material.Filled.Phone" />
                                 <MudLink Href="tel:+447889274109">07889 274109</MudLink>
                             </MudStack>
@@ -80,6 +82,7 @@
                 </MudCard>
 
                 <MudCard>
+                    <!-- Height is a string with units -->
                     <MudCardMedia Class="contact-image" Image="images/dishFive.jpg" Height="180" />
                 </MudCard>
 
@@ -91,7 +94,6 @@
 
 @code {
     private bool _submitting;
-
     private ContactModel _model = new();
 
     private async Task HandleValidSubmit()
