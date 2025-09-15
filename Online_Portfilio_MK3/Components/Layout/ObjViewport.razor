@@ -1,6 +1,7 @@
 ﻿@using Microsoft.JSInterop
 @implements IAsyncDisposable
 
+
 <div @ref="_host" style="@($"width:100%;height:{HeightPx}px;")"></div>
 
 @code {
@@ -15,7 +16,6 @@
     [Parameter] public string Background { get; set; } = "#101012";
     [Parameter] public bool AutoRotate { get; set; } = true;
     [Parameter] public double AutoRotateSpeed { get; set; } = 1.2;
-    /// <summary>Optional fixed distance from the model when framing (leave null for auto-fit)</summary>
     [Parameter] public double? CameraDistance { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -56,6 +56,6 @@
             if (_viewer is not null) await _viewer.InvokeVoidAsync("dispose");
             if (_module is not null) await _module.DisposeAsync();
         }
-        catch { /* no-op on teardown */ }
+        catch {  }
     }
 }

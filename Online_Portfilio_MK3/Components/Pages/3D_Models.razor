@@ -1,5 +1,6 @@
 ﻿@page "/3d-models"
 @using MudBlazor
+@using Online_Portfilio_MK3.Components.Layout
 
 
 <PageTitle>3D Models</PageTitle>
@@ -17,7 +18,7 @@
             <MudStack Spacing="1">
                 <MudText Typo="Typo.subtitle1">Interactive preview (.obj)</MudText>
                 <!-- Put your .obj under wwwroot/models and update the path below -->
-                <ObjViewport Src="models/ship.obj"
+                <ObjViewport Src="models\Scene test ex.obj"
                              HeightPx="520"
                              Background="#0f0f12"
                              AutoRotate="true" />
@@ -27,6 +28,12 @@
         <MudDivider Class="my-4" />
         <MudDivider Class="my-2" />
 
+        <MudText Typo="Typo.h5">Blender</MudText>
+        <MudText>
+            Blender is the program i have been using during my time at Evo Energy, where i created a diverce range of models for differnet clients.
+            I have learned lots of new skills and techniques in blender during my time at Evo espessily how to model in a profetional enviroment
+            for specified requests from clients. 
+        </MudText>
         <MudText Typo="Typo.h5">Autodesk Maya</MudText>
         <MudText>
             When creating 3D models I use Autodesk Maya as I have the most experience with the software and prefer how
@@ -36,7 +43,7 @@
 
         <MudText Typo="Typo.h5" Class="mt-4">3DS Max</MudText>
         <MudText>
-            I have learned how to use 3DS Max, however I find Maya to be more efficient, so I rarely use Max.
+            I have learned how to use the basics of 3DS Max, however I have more experience in Maya and Blender, so I rarely use Max.
         </MudText>
 
         <MudText Typo="Typo.h5" Class="mt-4">Photoshop</MudText>
