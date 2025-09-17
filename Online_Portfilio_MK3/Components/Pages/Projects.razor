@@ -6,24 +6,30 @@
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
     <MudStack Spacing="3">
         <MudText Typo="Typo.h4">Projects</MudText>
+
+        <!-- EvoEnergy EIM -->
         <MudCard>
             <MudCardHeader>
-                <MudText Typo="Typo.h6">EvoEnergy Eim Project</MudText>
+                <MudText Typo="Typo.h6">EvoEnergy EIM Project</MudText>
                 <MudChipSet T="string" Class="mt-1">
                     <MudChip Color="Color.Primary" Variant="Variant.Outlined" Label="true">Blazor</MudChip>
                     <MudChip Color="Color.Primary" Variant="Variant.Outlined" Label="true">C#</MudChip>
                     <MudChip Color="Color.Secondary" Variant="Variant.Outlined" Label="true">Web development</MudChip>
                 </MudChipSet>
             </MudCardHeader>
+            <MudCardContent>
+                 <MudText Class="highlight">
+                    During my time at EvoEnergy, I worked on a web application to help manage and visualise energy data for clients. The application was built using Blazor and C#, allowing for a seamless integration with existing systems.
+                </MudText>
+               
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Color="Color.Primary" Variant="Variant.Outlined" Href="/projects/evoenergy-eim">
+                    Read more
+                </MudButton>
+            </MudCardActions>
         </MudCard>
-        <MudCardContent>
-            <MudText Class="highlight">
-                During my placement year at EvoEnergy, I worked on a web application to help manage and visualise energy data for clients. The application was built using Blazor and C#, allowing for a seamless integration with existing systems.
-            </MudText>
-            <MudText Class="highlight">
-                My role involved both front-end and back-end development, ensuring that the user interface was intuitive while also handling complex data processing tasks. This project provided me with valuable experience in full-stack web development and working in a professional environment.
-            </MudText>
-        </MudCardContent>
+
         <!-- Necopinatus -->
         <MudCard>
             <MudCardHeader>
@@ -44,6 +50,11 @@
                     <video src="media/Necopinatus_Trailer.mp4" controls></video>
                 </div>
             </MudCardContent>
+            <MudCardActions>
+                <MudButton Color="Color.Primary" Variant="Variant.Outlined" Href="/projects/necopinatus">
+                    Read more
+                </MudButton>
+            </MudCardActions>
         </MudCard>
 
         <!-- Zool -->
@@ -68,6 +79,12 @@
                     <MudImage Src="images/zool_menu.png" Alt="Zool menu" Class="gallery-img" />
                 </MudPaper>
             </MudCardContent>
+            <MudCardActions>
+                <MudButton Color="Color.Primary" Variant="Variant.Outlined" Href="/projects/zool">
+                    Read more
+                </MudButton>
+            </MudCardActions>
         </MudCard>
+
     </MudStack>
 </MudContainer>
